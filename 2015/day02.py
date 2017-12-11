@@ -36,7 +36,5 @@ def part2(filename):
 
 
 if __name__ == '__main__':
-    import os
-    print(os.getcwd())
-    part1('../2015/day02input.txt')
-    part2('../2015/day02input.txt')
+    part1('day02input.txt')
+    part2('day02input.txt')
