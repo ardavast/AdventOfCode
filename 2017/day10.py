@@ -54,7 +54,7 @@ def part2(filename):
 
     knotHash = ''
     for byte in denseHash:
-        knotHash += ('{0:0{1}x}'.format(byte, 1))
+        knotHash += ('{0:0{1}x}'.format(byte, 2))
 
     print(knotHash)
 
