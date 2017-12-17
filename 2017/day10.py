@@ -22,6 +22,29 @@ def knotRound(l, lengths, curPos, skipSize):
     return l, curPos, skipSize
 
 
+def knotHash(input):
+    input = list(map(ord, input))
+    input += [17, 31, 73, 47, 23]
+
+    l = list(range(256))
+    curPos = 0
+    skipSize = 0
+
+    sparseHash = l
+    for i in range(64):
+        sparseHash, curPos, skipSize = knotRound(sparseHash, input, curPos, skipSize)
+
+    denseHash = []
+    for i in range(0, 256, 16):
+        denseHash.append(reduce(xor, sparseHash[i:i + 16]))
+
+    knotHash = ''
+    for byte in denseHash:
+        knotHash += ('{0:0{1}x}'.format(byte, 2))
+
+    return knotHash
+
+
 def part1(filename):
     with open(filename) as f:
         lengths = list(map(int, f.readline().split(',')))
@@ -37,26 +60,9 @@ def part1(filename):
 
 def part2(filename):
     with open(filename) as f:
-        lengths = list(map(ord, f.readline()))
-        lengths += [17, 31, 73, 47, 23]
+        line = f.readline()
 
-    l = list(range(256))
-    curPos = 0
-    skipSize = 0
-
-    sparseHash = l
-    for i in range(64):
-        sparseHash, curPos, skipSize = knotRound(sparseHash, lengths, curPos, skipSize)
-
-    denseHash = []
-    for i in range(0, 256, 16):
-        denseHash.append(reduce(xor, sparseHash[i:i + 16]))
-
-    knotHash = ''
-    for byte in denseHash:
-        knotHash += ('{0:0{1}x}'.format(byte, 2))
-
-    print(knotHash)
+    print(knotHash(line))
 
 
 if __name__ == '__main__':
