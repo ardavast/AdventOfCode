@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 # coding: utf8
 
+"""
+Day 1: Chronal Calibration part 1
+https://adventofcode.com/2018/day/1
+"""
+
 
 def main():
     freq = 0

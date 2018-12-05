@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 # coding: utf8
 
+"""
+Day 4: Repose Record part 2
+https://adventofcode.com/2018/day/4
+"""
+
 import re
 from collections import defaultdict, Counter
 

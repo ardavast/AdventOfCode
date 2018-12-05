@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 # coding: utf8
 
+"""
+Day 2: Inventory Management System part 1
+https://adventofcode.com/2018/day/2
+"""
+
 from collections import Counter
 
 

@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 # coding: utf8
 
-import re
+"""
+Day 3: No Matter How You Slice It part 1
+https://adventofcode.com/2018/day/3
+"""
 
+import re
 import numpy as np
 
 
