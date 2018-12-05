@@ -33,8 +33,8 @@ def main():
         line = line.strip()
 
     polymers = [line] * 26
-    for i, c in enumerate('abcd'):
-        polymers[i + 1] = polymers[i + 1].replace(c, '').replace(c.upper(), '')
+    for i, c in enumerate(ascii_lowercase):
+        polymers[i] = polymers[i].replace(c, '').replace(c.upper(), '')
 
     print(min([len(reactPolymer(x)) for x in polymers]))
 
